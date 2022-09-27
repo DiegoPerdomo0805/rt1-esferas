@@ -42,15 +42,27 @@ class RayTracer(object):
 
     def render(self):
         fov = int(pi / 2)
-        print(fov)
         aspect_ratio = self.width / self.height
         #angle = tan(fov / 2)
         angle = tan(fov / 2)
 
+        #cara
+        self.scene.append(Sphere(V3(0.5,-3.375,-14), 0.15, color(0 , 0, 0)))
+        self.scene.append(Sphere(V3(-0.5,-3.375,-14), 0.15, color(0 , 0, 0)))
+        self.scene.append(Sphere(V3(0,-3,-14), 0.15, color(252,76,2)))
+
+        
+
+        #botones
+        self.scene.append(Sphere(V3(0,-0.5,-14), 0.375, color(157,34,53)))
+        self.scene.append(Sphere(V3(0,0.5,-14), 0.375, color(157,34,53)))
+        self.scene.append(Sphere(V3(0,1.5,-14), 0.375, color(157,34,53)))
+
         #Bolas de nieve
         self.scene.append(Sphere(V3(0,4,-14), 3, color(255,255,255)))
-        self.scene.append(Sphere(V3(0,0,-14), 2, color(255,255,255)))
-        self.scene.append(Sphere(V3(0,-3,-14), 1, color(255,255,255)))
+        self.scene.append(Sphere(V3(0,-0.125,-14), 2, color(255,255,255)))
+        self.scene.append(Sphere(V3(0,-3,-14), 1, color(255,255,255)))        
+
 
         for y in range(self.height):
             for x in range(self.width):
